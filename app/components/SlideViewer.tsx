@@ -55,6 +55,12 @@ export default function SlideViewer({ slides }: Props) {
     e.currentTarget.classList.add('loaded');
   }
 
+  function imgRef(node: HTMLImageElement | null) {
+    if (node && node.complete && node.naturalWidth > 0) {
+      node.classList.add('loaded');
+    }
+  }
+
   function switchLang(lang: 'en' | 'fr') {
     if (lang === currentLang) return;
     setCurrentLang(lang);
@@ -136,6 +142,7 @@ export default function SlideViewer({ slides }: Props) {
               <picture>
                 <source srcSet={imgUrl} type="image/webp" />
                 <img
+                  ref={imgRef}
                   src={getFallbackUrl(imgUrl)}
                   alt={altText}
                   loading={i === 0 ? 'eager' : 'lazy'}
