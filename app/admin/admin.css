@@ -1,0 +1,278 @@
+.admin {
+  min-height: 100vh;
+  background: #111;
+  color: #fff;
+  padding: 24px;
+}
+
+.admin h1 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-actions button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.admin-actions button:hover {
+  background: #333;
+}
+
+.admin-actions button.primary {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.admin-actions button.primary:hover {
+  background: #ddd;
+}
+
+/* Slide Grid */
+.slide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.slide-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: grab;
+  transition: all 0.2s;
+}
+
+.slide-card:active {
+  cursor: grabbing;
+}
+
+.slide-card.dragging {
+  opacity: 0.4;
+  border-color: #666;
+}
+
+.slide-card.drag-over {
+  border-color: #fff;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.15);
+}
+
+.slide-card-header {
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #aaa;
+  border-bottom: 1px solid #333;
+}
+
+.slide-card-header .order {
+  color: #666;
+  font-size: 12px;
+}
+
+.slide-card-thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  background: #222;
+}
+
+.slide-card-actions {
+  padding: 10px 14px;
+  display: flex;
+  gap: 6px;
+}
+
+.slide-card-actions button {
+  flex: 1;
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background: #222;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.slide-card-actions button:hover {
+  background: #333;
+  color: #fff;
+}
+
+.slide-card-actions button.danger:hover {
+  background: #4a1111;
+  border-color: #f44;
+  color: #f44;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.modal {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.modal h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.modal-close {
+  float: right;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #333;
+}
+
+.tab {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 13px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  color: #ccc;
+}
+
+.tab.active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #222;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.form-group textarea {
+  min-height: 80px;
+}
+
+/* Upload zone */
+.upload-zone {
+  border: 2px dashed #444;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-zone:hover {
+  border-color: #888;
+  color: #ccc;
+}
+
+.upload-zone img {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.upload-zone input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Status */
+.status-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 24px;
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+  font-size: 13px;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 500;
+}
+
+.status-bar .saved {
+  color: #4caf50;
+}
